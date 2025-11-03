@@ -1,245 +1,84 @@
+
+
+
+<!-- ==========================
+     version3-showcase.html
+     Showcase Gallery — grid of projects with hover preview effect and filter
+     ========================== -->
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>👾 SATHKRITH GAUR — Game Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Sathkrith Gaur — Game Developer specialized in Unreal Engine, Blueprints, and C++.">
-  <style>
-    /* === Cyber Glass Theme === */
-    :root {
-      --bg: #060818;
-      --card: rgba(255, 255, 255, 0.06);
-      --accent: #06b6d4;
-      --accent2: #9333ea;
-      --text: #e6eef6;
-      --muted: #94a3b8;
-      --glass: rgba(255, 255, 255, 0.08);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>👾 Sathkrith Gaur — Showcase</title>
+<meta name="description" content="Project showcase gallery">
+<style>
+:root{--bg:#02030a;--card:rgba(255,255,255,0.03);--accent:#06b6d4;--muted:#97a5b3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#e9f6ff;min-height:100vh}
+.wrap{max-width:1200px;margin:36px auto;padding:28px}
+.header{display:flex;align-items:center;justify-content:space-between}
+.avatar{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;color:#041421}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.card{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card .info{padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0.2),transparent)}
+.card h3{margin:0;font-size:16px}
+.card p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.preview{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+.card:hover .preview{opacity:1}
+.preview small{padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041421;font-weight:700}
 
-    body {
-      font-family: 'Poppins', system-ui, sans-serif;
-      background: radial-gradient(circle at 10% 20%, #0a0f1f 20%, #01020a 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+.footer{margin-top:20px;color:var(--muted);text-align:center}
 
-    .wrap {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 30px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      animation: fadeInDown 1s ease-in-out;
-    }
-
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 28px;
-      color: #041421;
-      box-shadow: 0 0 20px var(--accent2);
-      transition: transform 0.3s ease;
-    }
-
-    .avatar:hover {
-      transform: rotate(10deg) scale(1.1);
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 4px;
-      background: linear-gradient(to right, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p.lead { color: var(--muted); }
-
-    nav {
-      margin-top: 12px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      background: var(--glass);
-      padding: 8px 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.05);
-      backdrop-filter: blur(8px);
-    }
-
-    .btn:hover {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    main {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 24px;
-      margin-top: 26px;
-    }
-
-    section.card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,0.05);
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    section.card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 16px rgba(6,182,212,0.2);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .chip {
-      background: rgba(255,255,255,0.07);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      border: 1px solid rgba(255,255,255,0.04);
-      transition: background 0.3s ease;
-    }
-
-    .chip:hover { background: linear-gradient(90deg, var(--accent), var(--accent2)); color: #fff; }
-
-    .projects a {
-      display: block;
-      background: rgba(255,255,255,0.04);
-      margin: 8px 0;
-      padding: 10px 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .projects a:hover {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: #fff;
-      transform: translateY(-3px);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 900px) {
-      main { grid-template-columns: 1fr; }
-      .avatar { width: 80px; height: 80px; }
-    }
-  </style>
+@media(max-width:720px){.card img{height:140px}}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
+<div class="wrap">
+  <div class="header">
+    <div style="display:flex;align-items:center;gap:12px">
       <div class="avatar">SG</div>
       <div>
-        <h1>👾 SATHKRITH GAUR</h1>
-        <p class="lead">Game Developer • Unreal Engine • C++ • Blueprints</p>
-        <nav>
-          <a class="btn" href="#about">About</a>
-          <a class="btn" href="#projects">Projects</a>
-          <a class="btn" href="#contact">Contact</a>
-        </nav>
+        <h2>👾 Sathkrith Gaur</h2>
+        <p style="color:var(--muted);margin:0">Game Developer • Unreal Engine • C++</p>
       </div>
-    </header>
-
-    <main>
-      <section id="about" class="card">
-        <h2>About Me</h2>
-        <p>Hey there! I’m <strong>👾 Sathkrith Gaur</strong>, a passionate Game Developer based in Hyderabad. I specialize in <strong>Unreal Engine</strong> and <strong>C++</strong>, focusing on gameplay mechanics, AI systems, and immersive experiences. My mission is to bring creativity to life through interactive storytelling and game design.</p>
-
-        <h3>Skills</h3>
-        <div class="skills">
-          <div class="chip">C++</div>
-          <div class="chip">Unreal Engine</div>
-          <div class="chip">Blueprints</div>
-          <div class="chip">Git</div>
-          <div class="chip">UI/UX</div>
-          <div class="chip">HTML/CSS</div>
-        </div>
-
-        <h3 style="margin-top:14px">Quick Links</h3>
-        <p><a href="https://github.com/sathkrith1" target="_blank" class="btn">GitHub</a> 
-        <a href="#contact" class="btn">Email</a></p>
-      </section>
-
-      <aside>
-        <section class="card">
-          <h3>Contact</h3>
-          <p>Email: <a href="mailto:sathkrith0@gmail.com">sathkrith0@gmail.com</a></p>
-          <p>Discord: <span style="color:var(--muted)">@menace5_</span></p>
-          <h4>Availability</h4>
-          <p class="lead">Open to freelance projects & collaborations 🚀</p>
-        </section>
-
-        <section class="card" style="margin-top:16px">
-          <h4>Featured Projects</h4>
-          <div class="projects">
-            <a href="#"><strong>Horror Survival Game</strong><br><small>Custom AI + UI System — Unreal Engine</small></a>
-            <a href="#"><strong>Menace Arena</strong><br><small>Multiplayer combat prototype — C++ / UE Blueprints</small></a>
-          </div>
-        </section>
-      </aside>
-    </main>
-
-    <section id="projects" class="card" style="margin-top:18px">
-      <h2>Projects & Work</h2>
-      <p>Explore my latest work on <a href="https://github.com/sathkrith1" target="_blank">GitHub</a> and upcoming gameplay demos on YouTube.</p>
-    </section>
-
-    <section id="contact" class="card" style="margin-top:18px">
-      <h2>Get in Touch</h2>
-      <p>Let’s collaborate! Email me at <a href="mailto:sathkrith0@gmail.com">sathkrith0@gmail.com</a> or connect on Discord <strong>@menace5_</strong>.</p>
-    </section>
-
-    <footer>
-      <p>Made with ❤️ & Unreal Power by <strong>Sathkrith Gaur</strong> — Hosted on GitHub Pages.</p>
-    </footer>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://github.com/sathkrith1" target="_blank" style="color:var(--muted);text-decoration:none">GitHub</a>
+      <a href="https://www.linkedin.com/in/sathkrith-gaur/" target="_blank" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+    </div>
   </div>
+
+  <div class="grid">
+    <article class="card">
+      <img src="https://placehold.co/800x480/0b1220/ffffff/png?text=Horror+Survival" alt="Horror Survival">
+      <div class="preview"><small>Play Demo</small></div>
+      <div class="info"><h3>Horror Survival</h3><p>AI, dynamic events, and UI systems</p></div>
+    </article>
+
+    <article class="card">
+      <img src="https://placehold.co/800x480/061022/ffffff/png?text=Menace+Arena" alt="Menace Arena">
+      <div class="preview"><small>Watch Trailer</small></div>
+      <div class="info"><h3>Menace Arena</h3><p>Multiplayer combat prototype</p></div>
+    </article>
+
+    <article class="card">
+      <img src="https://placehold.co/800x480/071022/ffffff/png?text=Prototype+3" alt="Prototype">
+      <div class="preview"><small>View Repo</small></div>
+      <div class="info"><h3>Prototype 3</h3><p>Gameplay systems & polish</p></div>
+    </article>
+
+    <article class="card">
+      <img src="https://placehold.co/800x480/081022/ffffff/png?text=UI+Kit" alt="UI Kit">
+      <div class="preview"><small>Inspect</small></div>
+      <div class="info"><h3>Custom UI Kit</h3><p>HUD and menu systems</p></div>
+    </article>
+  </div>
+
+  <div class="footer">Want me to replace placeholders with your real screenshots and demo links? Upload them and I’ll embed.</div>
+</div>
 </body>
 </html>
