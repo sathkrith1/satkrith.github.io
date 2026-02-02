@@ -1,84 +1,104 @@
-
-
-
-<!-- ==========================
-     version3-showcase.html
-     Showcase Gallery — grid of projects with hover preview effect and filter
-     ========================== -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>👾 Sathkrith Gaur — Showcase</title>
-<meta name="description" content="Project showcase gallery">
-<style>
-:root{--bg:#02030a;--card:rgba(255,255,255,0.03);--accent:#06b6d4;--muted:#97a5b3}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#e9f6ff;min-height:100vh}
-.wrap{max-width:1200px;margin:36px auto;padding:28px}
-.header{display:flex;align-items:center;justify-content:space-between}
-.avatar{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;color:#041421}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sathkrith Gaur | Unreal Engine Developer</title>
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
-.card{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
-.card img{width:100%;height:180px;object-fit:cover;display:block}
-.card .info{padding:12px;background:linear-gradient(180deg,rgba(0,0,0,0.2),transparent)}
-.card h3{margin:0;font-size:16px}
-.card p{margin:6px 0 0;color:var(--muted);font-size:13px}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
-.preview{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
-.card:hover .preview{opacity:1}
-.preview small{padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041421;font-weight:700}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Orbitron:wght@600&display=swap" rel="stylesheet">
 
-.footer{margin-top:20px;color:var(--muted);text-align:center}
-
-@media(max-width:720px){.card img{height:140px}}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-  <div class="header">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="avatar">SG</div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Sathkrith Gaur</h1>
+    <p class="subtitle">Unreal Engine Developer · Gameplay Systems</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="card">
+    <h2>About Me</h2>
+    <p>
+      I’m a Unreal Engine developer focused on building gameplay systems
+      and mechanics using Unreal Engine 5. I work primarily with Blueprints and
+      C++ fundamentals to create interactive gameplay, player movement, and core
+      game logic. I’m especially interested in horror and survival games.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="card">
+    <h2>Skills</h2>
+
+    <div class="skills">
       <div>
-        <h2>👾 Sathkrith Gaur</h2>
-        <p style="color:var(--muted);margin:0">Game Developer • Unreal Engine • C++</p>
+        <h3>Engine</h3>
+        <ul>
+          <li>Unreal Engine 5</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Programming</h3>
+        <ul>
+          <li>Blueprints</li>
+          <li>C++ (foundational)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Gameplay Systems</h3>
+        <ul>
+          <li>Player movement</li>
+          <li>Interaction systems</li>
+          <li>Basic AI logic</li>
+          <li>UI / HUD</li>
+        </ul>
       </div>
     </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <a href="https://github.com/sathkrith1" target="_blank" style="color:var(--muted);text-decoration:none">GitHub</a>
-      <a href="https://www.linkedin.com/in/sathkrith-gaur/" target="_blank" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="card">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Gameplay Prototype 01</h3>
+      <p>
+        Unreal Engine prototype focused on player movement, interaction mechanics,
+        and basic gameplay logic using Blueprints.
+      </p>
+      <span class="tag">Unreal Engine 5</span>
+      <span class="tag">Blueprints</span>
     </div>
-  </div>
 
-  <div class="grid">
-    <article class="card">
-      <img src="https://placehold.co/800x480/0b1220/ffffff/png?text=Horror+Survival" alt="Horror Survival">
-      <div class="preview"><small>Play Demo</small></div>
-      <div class="info"><h3>Horror Survival</h3><p>AI, dynamic events, and UI systems</p></div>
-    </article>
+    <div class="project">
+      <h3>Survival Horror Prototype</h3>
+      <p>
+        Early-stage horror gameplay prototype exploring atmosphere, player controls,
+        and basic AI behavior.
+      </p>
+      <span class="tag">Unreal Engine 5</span>
+      <span class="tag">Gameplay Systems</span>
+    </div>
+  </section>
 
-    <article class="card">
-      <img src="https://placehold.co/800x480/061022/ffffff/png?text=Menace+Arena" alt="Menace Arena">
-      <div class="preview"><small>Watch Trailer</small></div>
-      <div class="info"><h3>Menace Arena</h3><p>Multiplayer combat prototype</p></div>
-    </article>
+  <!-- CONTACT -->
+  <section class="card">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sathkrith0@gmail.com">sathkrith0@gmail.com</a></p>
+    <p>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> ·
+      <a href="https://github.com" target="_blank">GitHub</a>
+    </p>
+  </section>
 
-    <article class="card">
-      <img src="https://placehold.co/800x480/071022/ffffff/png?text=Prototype+3" alt="Prototype">
-      <div class="preview"><small>View Repo</small></div>
-      <div class="info"><h3>Prototype 3</h3><p>Gameplay systems & polish</p></div>
-    </article>
+  <footer>
+    <p>© 2026 Sathkrith Gaur</p>
+  </footer>
 
-    <article class="card">
-      <img src="https://placehold.co/800x480/081022/ffffff/png?text=UI+Kit" alt="UI Kit">
-      <div class="preview"><small>Inspect</small></div>
-      <div class="info"><h3>Custom UI Kit</h3><p>HUD and menu systems</p></div>
-    </article>
-  </div>
-
-  <div class="footer">Want me to replace placeholders with your real screenshots and demo links? Upload them and I’ll embed.</div>
-</div>
 </body>
 </html>

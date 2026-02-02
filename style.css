@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: #0b0f14;
+  color: #e6edf3;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-family: Orbitron, sans-serif;
+  font-size: 3rem;
+  color: #00ffd5;
+}
+
+.subtitle {
+  margin-top: 12px;
+  color: #9ba4b4;
+  font-size: 1.1rem;
+}
+
+/* CARDS */
+.card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #111827;
+  border-radius: 14px;
+  box-shadow: 0 0 35px rgba(0, 255, 213, 0.06);
+}
+
+.card h2 {
+  font-family: Orbitron, sans-serif;
+  margin-bottom: 16px;
+  color: #00ffd5;
+}
+
+.card p {
+  color: #d1d5db;
+}
+
+/* SKILLS */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skills h3 {
+  margin-bottom: 8px;
+  color: #e6edf3;
+}
+
+.skills ul {
+  list-style: none;
+}
+
+.skills li {
+  color: #9ba4b4;
+}
+
+/* PROJECTS */
+.project {
+  margin-bottom: 24px;
+}
+
+.project h3 {
+  color: #e6edf3;
+  margin-bottom: 6px;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  background: rgba(0, 255, 213, 0.15);
+  color: #00ffd5;
+  border-radius: 20px;
+}
+
+/* LINKS */
+a {
+  color: #00ffd5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
