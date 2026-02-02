@@ -30,8 +30,8 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  color: #22ffd6;
-  text-shadow: 0 0 12px #22ffd6;
+  color: #ff224a;
+  text-shadow: 0 0 12px #fbff22;
   transform: translateY(-2px);
 }
 
@@ -44,7 +44,7 @@ nav a.active {
 .page-header h1 {
   font-family: "Press Start 2P", monospace;
   font-size: 2rem; /* INCREASED */
-  color: #22ffd6;
+  color: #2261ff;
   text-shadow: 0 0 18px #22ffd6;
 }
 
@@ -59,14 +59,14 @@ nav a.active {
   max-width: 1000px;
   margin: 35px auto;
   padding: 30px;
-  border: 2px solid #22ffd6;
-  box-shadow: 0 0 25px rgba(34,255,214,0.35);
+  border: 2px solid #22ffda;
+  box-shadow: 0 0 25px rgba(192, 255, 34, 0.35);
   transition: 0.25s;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 45px rgba(34,255,214,0.65);
+  box-shadow: 0 0 45px rgba(255, 196, 34, 0.65);
 }
 
 .card h2 {
