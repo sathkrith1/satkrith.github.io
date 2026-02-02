@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +7,12 @@
 }
 
 body {
+  background: #050505;
+  color: #e5e7eb;
   font-family: Inter, sans-serif;
-  background: #0b0f14;
-  color: #e6edf3;
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
   display: flex;
   justify-content: center;
@@ -19,92 +21,72 @@ nav {
 }
 
 nav a {
-  color: #9ba4b4;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.7rem;
+  color: #9ca3af;
   text-decoration: none;
-  font-weight: 500;
+  transition: all 0.25s ease;
 }
 
 nav a:hover,
 nav a.active {
-  color: #00ffd5;
+  color: #22ffd6;
+  text-shadow: 0 0 12px #22ffd6;
+  transform: translateY(-2px);
 }
 
-/* HERO */
-.hero {
+/* PAGE HEADER */
+.page-header {
   text-align: center;
-  padding: 80px 20px;
+  margin: 40px 0;
 }
 
-.hero.small {
-  padding: 50px 20px;
+.page-header h1 {
+  font-family: "Press Start 2P", monospace;
+  color: #22ffd6;
+  font-size: 1.4rem;
+  text-shadow: 0 0 15px #22ffd6;
 }
 
-.hero h1 {
-  font-family: Orbitron, sans-serif;
-  color: #00ffd5;
-  font-size: 3rem;
-}
-
-.hero p {
-  margin-top: 10px;
-  color: #9ba4b4;
-}
-
-/* CARDS */
+/* CARD */
 .card {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
-  background: #111827;
-  border-radius: 14px;
-  box-shadow: 0 0 30px rgba(0, 255, 213, 0.05);
+  border: 2px solid #22ffd6;
+  box-shadow: 0 0 25px rgba(34,255,214,0.3);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 45px rgba(34,255,214,0.6);
 }
 
 .card h2 {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.9rem;
   margin-bottom: 15px;
-  color: #00ffd5;
-  font-family: Orbitron, sans-serif;
+  color: #22ffd6;
 }
 
-/* LIST */
-.list {
-  list-style: none;
-}
-
-.list li {
-  margin-bottom: 8px;
+.card p {
+  line-height: 1.7;
   color: #d1d5db;
 }
 
-/* PROJECT */
-.project {
-  margin-bottom: 20px;
-}
-
-.tag {
-  display: inline-block;
-  margin-top: 6px;
-  margin-right: 6px;
-  padding: 4px 10px;
-  background: rgba(0,255,213,0.15);
-  color: #00ffd5;
-  border-radius: 20px;
-  font-size: 0.8rem;
-}
-
-/* LINKS */
-a {
-  color: #00ffd5;
-}
-
-a:hover {
-  text-decoration: underline;
+/* PROJECT MEDIA */
+.project video,
+.project img {
+  width: 100%;
+  margin-top: 15px;
+  border: 2px solid #22ffd6;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 40px 20px;
+  margin: 40px 0;
+  font-size: 0.7rem;
   color: #6b7280;
-  font-size: 0.9rem;
 }
