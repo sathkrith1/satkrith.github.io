@@ -12,11 +12,11 @@ body {
   font-family: Inter, sans-serif;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 28px;
   padding: 20px;
 }
 
@@ -25,7 +25,7 @@ nav a {
   font-size: 0.7rem;
   color: #9ca3af;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
 nav a:hover,
@@ -35,7 +35,7 @@ nav a.active {
   transform: translateY(-2px);
 }
 
-/* PAGE HEADER */
+/* HEADER */
 .page-header {
   text-align: center;
   margin: 40px 0;
@@ -43,36 +43,39 @@ nav a.active {
 
 .page-header h1 {
   font-family: "Press Start 2P", monospace;
-  color: #22ffd6;
   font-size: 1.4rem;
+  color: #22ffd6;
   text-shadow: 0 0 15px #22ffd6;
 }
 
 /* CARD */
 .card {
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 35px auto;
   padding: 30px;
   border: 2px solid #22ffd6;
-  box-shadow: 0 0 25px rgba(34,255,214,0.3);
-  transition: all 0.25s ease;
+  box-shadow: 0 0 25px rgba(34,255,214,0.35);
+  transition: 0.25s;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 45px rgba(34,255,214,0.6);
+  box-shadow: 0 0 45px rgba(34,255,214,0.65);
 }
 
 .card h2 {
   font-family: "Press Start 2P", monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-bottom: 15px;
   color: #22ffd6;
 }
 
-.card p {
-  line-height: 1.7;
-  color: #d1d5db;
+.card ul {
+  list-style: none;
+}
+
+.card li {
+  margin-bottom: 8px;
 }
 
 /* PROJECT MEDIA */
@@ -81,6 +84,34 @@ nav a.active {
   width: 100%;
   margin-top: 15px;
   border: 2px solid #22ffd6;
+}
+
+/* LINKS */
+a {
+  color: #22ffd6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 18px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.65rem;
+  border: 2px solid #22ffd6;
+  text-decoration: none;
+  color: #22ffd6;
+  transition: 0.25s;
+}
+
+.download-btn:hover {
+  background: #22ffd6;
+  color: #000;
+  box-shadow: 0 0 20px #22ffd6;
 }
 
 /* FOOTER */
