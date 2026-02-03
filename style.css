@@ -142,3 +142,27 @@ footer {
 .project.upcoming:hover {
   opacity: 1;
 }
+
+/* CONTACT ICON BUTTONS */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+.contact-icons img {
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  border: 2px solid #22ffd6;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 15px rgba(34,255,214,0.3);
+}
+
+.contact-icons img:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 0 30px rgba(34,255,214,0.8);
+  background: rgba(34,255,214,0.1);
+}
