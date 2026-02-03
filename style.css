@@ -88,8 +88,13 @@ nav a.active {
 .project video,
 .project img {
   width: 100%;
-  margin-top: 15px;
+  max-width: 380px;          /* controls max size */
+  height: auto;
+  display: block;
+  margin: 18px auto 0 auto;  /* centers media */
+  border-radius: 10px;
   border: 2px solid #22ffd6;
+  box-shadow: 0 0 18px rgba(34,255,214,0.35);
 }
 
 /* LINKS */
@@ -126,4 +131,14 @@ footer {
   margin: 40px 0;
   font-size: 0.7rem;
   color: #6b7280;
+}
+
+/* UPCOMING PROJECT STYLE */
+.project.upcoming {
+  border: 2px dashed #22ffd6;
+  opacity: 0.85;
+}
+
+.project.upcoming:hover {
+  opacity: 1;
 }
