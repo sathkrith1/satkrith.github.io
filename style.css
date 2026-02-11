@@ -344,3 +344,14 @@ footer {
 /* =========================
    END OF MOBILE STYLES
    ========================= */
+
+   .project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
